@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { PerfilComponent } from './perfil/perfil.component';
+import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -27,7 +28,8 @@ const routes: Routes = [
     HomeComponent,
     RegistroComponent,
     LoginComponent,
-    PerfilComponent
+    PerfilComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
