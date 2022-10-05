@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -21,7 +22,8 @@ const routes: Routes = [
     HeaderComponent,
     HomeComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
