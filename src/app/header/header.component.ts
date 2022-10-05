@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   //Aqui iria la url de la imagen de la red social
-  titulo: string = "spacetime";
+  titulo: string = "SpaceTime";
 
   ngOnInit(): void {
   }
