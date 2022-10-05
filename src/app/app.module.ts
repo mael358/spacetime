@@ -13,12 +13,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { PerfilComponent } from './perfil/perfil.component';
 import { LandingComponent } from './landing/landing.component';
+import { CreadoresComponent } from './creadores/creadores.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'landing', component: LandingComponent},
+  { path: 'creadores', component: CreadoresComponent}
 ]
 
 @NgModule({
@@ -29,7 +32,8 @@ const routes: Routes = [
     RegistroComponent,
     LoginComponent,
     PerfilComponent,
-    LandingComponent
+    LandingComponent,
+    CreadoresComponent
   ],
   imports: [
     BrowserModule,
