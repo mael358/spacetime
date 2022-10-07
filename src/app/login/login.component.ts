@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialAuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  usuarioSocial: SocialUser | undefined;
+  estaLoggeado: boolean | undefined;
 
-  ngOnInit(): void {
+  constructor(private socialAuthService: SocialAuthService) { }
+
+  ngOnInit(): void 
+  {
+    this.socialAuthService.authState.subscribe((user) => {
+      this.usuarioSocial = user;
+      this.estaLoggeado = user != null && user != undefined;
+    });
+  }
+
+  loggearseFacebook() 
+  {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  cerrarSesion()
+  {
+    this.socialAuthService.signOut();
   }
 
 }

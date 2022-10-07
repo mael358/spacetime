@@ -1,8 +1,8 @@
-<div class="container-fluid my-3" *ngFor="let publicacion of posts">
+<div class="container-fluid mx-auto my-3" *ngFor="let publicacion of posts">
     <mat-card class="example-card">
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{ publicacion.usuario }}</mat-card-title>
+            <div mat-card-avatar class="example-header-image" style="cursor: pointer;"></div>
+            <mat-card-title style="cursor: pointer;">{{ publicacion.usuario }}</mat-card-title>
             <mat-card-subtitle>{{ publicacion.fecha | date:"fullDate" }}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
