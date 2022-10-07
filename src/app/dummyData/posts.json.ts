@@ -20,10 +20,14 @@ export const POSTS: Post[] = [
         }, 
         meGusto: true
     },
-    { id: 2, 
+    { 
+        id: 2, 
         contenido: 'lorem ipsum 2', 
         fecha: '2022-10-01', 
-        meGusta: [4, 5], 
+        meGusta: [
+            4, 
+            5
+        ], 
         usuario: {
             id: 2,
             foto: '/home/hveliz/fotos/1.jpg',
