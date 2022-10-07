@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   posts: Post[] = [];
 
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
     this.homeService.getPosts().subscribe(x => this.posts = x);
   }
 }
