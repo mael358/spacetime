@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   estaLoggeado: boolean | undefined;
 
   constructor(private socialAuthService: SocialAuthService) { }
+  titulo: string = "SpaceTime";
 
   ngOnInit(): void 
   {
