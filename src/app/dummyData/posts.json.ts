@@ -6,7 +6,7 @@ export const POSTS: Post[] = [
         contenido: 'lorem ipsum', 
         fecha: '2022-10-04', 
         meGusta: [
-            1, 
+            1,
             2, 
             3
         ], 
@@ -14,8 +14,8 @@ export const POSTS: Post[] = [
             id: 1,
             foto: '/home/mael/fotos/1.jpg',
             email: 'marcosv200007@gmail.com',
-            nombres: 'Marcos Emilio',
-            apellidos: 'Velasquez Hidalgo',
+            nombres: 'Marcos Emilio Velasquez Hidalgo',
+            apodo: 'mael358',
             password: 'a24&rkj@45./asf'
         }, 
         meGusto: true
@@ -33,7 +33,7 @@ export const POSTS: Post[] = [
             foto: '/home/hveliz/fotos/1.jpg',
             email: 'hveliz@gmail.com',
             nombres: 'Harry Enrique',
-            apellidos: 'Veliz',
+            apodo: 'hveliz',
             password: 'a24&rkj@45./asf'
         }, 
         meGusto: false 

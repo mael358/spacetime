@@ -3,6 +3,6 @@ export class Usuario {
     foto: string | undefined;
     email: string | undefined;
     nombres: string | undefined;
-    apellidos: string | undefined;
+    apodo: string | undefined;
     password: string | undefined;
 }
