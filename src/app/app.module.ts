@@ -15,12 +15,13 @@ import { LandingComponent } from './landing/landing.component';
 import { CreadoresComponent } from './creadores/creadores.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { AuthGuard } from './login/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'perfil', component: PerfilComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'landing', component: LandingComponent },
   { path: 'creadores', component: CreadoresComponent }
 ]
