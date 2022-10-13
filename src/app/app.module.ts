@@ -16,6 +16,7 @@ import { CreadoresComponent } from './creadores/creadores.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { AuthGuard } from './login/guards/auth.guard';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'landing', component: LandingComponent },
-  { path: 'creadores', component: CreadoresComponent }
+  { path: 'creadores', component: CreadoresComponent },
+  { path: 'buscador', component: BuscadorComponent }
 ]
 
 @NgModule({
@@ -34,7 +36,8 @@ const routes: Routes = [
     LoginComponent,
     PerfilComponent,
     LandingComponent,
-    CreadoresComponent
+    CreadoresComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

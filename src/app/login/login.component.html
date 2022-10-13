@@ -38,31 +38,47 @@
                     <div class="titulo-seccion">
                         <h5>Registrar</h5>
                     </div>
+
+                    <div class="text-center" >
+                        <p>¿No tienes una cuenta? Registrate ahora</p>
+                    </div>
                     <form autocomplete="off" class="form-secion" action="#" method="post" accept-charset="utf-8">
-                        <div class="mb-3">
-                            <div class="form-input">
-                                <input class="form-control" type="text" placeholder="Nombre"
-                                    pattern="[A-Za-z0-9 ]{1,30}">
-                                <div class="icono">
-                                    <i class="fas fa-user"></i>
-                                </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" pattern="[A-Za-z0-9 ]{1,30}">
+
+                        <label for="floatingInput">
+                                <i  class="icono" class="fas fa-user"></i>
+                                Nombre completo
+                        </label>
+                      </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">@</span>
+                            <div class="form-floating">
+                              <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                              <label for="floatingInputGroup1">Nombre de Usuario</label>
                             </div>
-                        </div>
-                        <div class="form-input">
-                            <input class="form-control" type="date" placeholder="Fecha Nacimiento" minlength="8">
-                        </div>
-                        <div class="form-input">
-                            <input class="form-control" type="email" placeholder="Correo Electrónico">
-                            <div class="icono">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                        </div>
-                        <div class="form-input">
-                            <input class="form-control" type="password" placeholder="Contraseña" minlength="8">
-                            <div class="icono">
-                                <i class="fas fa-unlock"></i>
-                            </div>
-                        </div>
+                          </div>
+
+                          <div class="form-floating mb-3">
+                            <input type="date" class="form-control" id="floatingInput" placeholder="Fecha de Nacimiento" minlength="8">
+                            <label for="floatingInput">
+                                Fecha de Nacimiento</label>
+                          </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Correo Electrónico">
+                            <label for="floatingInput">
+                                <i class="icono" class="fas fa-envelope"></i>
+                                Correo Electrónico</label>
+                          </div>
+
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" minlength="8">
+                            <label for="floatingPassword">
+                                <i class="icono" class="fas fa-unlock"></i>
+                                Contraseña</label><br>
+                          </div>
                         <div class="form-boton">
                             <button type="submit" class="btn-form registro">
                                 Registrar
@@ -83,33 +99,39 @@
                     <div class="titulo-seccion">
                         <h5>Iniciar sesión</h5>
                     </div>
-                    <br>
-                    <div class="inciar-con">
-                        <div class="form-boton">
-                            <button type="submit" class="btn-form facebook" (click)="loggearseFacebook()">
-                                <i class="fab fa-facebook-square"></i>
-                                facebook
-                            </button>
-                        </div>
-                    </div>
+                    
                     <form class="form-secion" action="#" method="post" accept-charset="utf-8">
-                        <div class="form-input">
-                            <input class="form-control" type="email" placeholder="Correo Electrónico">
-                            <div class="icono">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                        </div>
-                        <div class="form-input">
-                            <input class="form-control" type="password" placeholder="Contraseña" minlength="8">
-                            <div class="icono">
-                                <i class="fas fa-unlock"></i>
-                            </div>
-                        </div>
+                    
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Correo Electrónico">
+                            <label for="floatingInput">
+                                <i class="icono" class="fas fa-envelope"></i>
+                                Correo Electrónico</label>
+                          </div>
+                          <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" minlength="8">
+                            <label for="floatingPassword">
+                                <i class="icono" class="fas fa-unlock"></i>
+                                Contraseña</label><br>
+                          </div>
+                          
                         <div class="form-boton">
                             <button type="submit" class="btn-form iniciar">
                                 Iniciar
                             </button>
+                        </div><br>
+                        <div class="text-center" >
+                            <p>o inicia sesión con</p>
                         </div>
+                        
+                    <div class="inciar-con">
+                        <div class="form-boton">
+                            <button type="submit" class="btn-form facebook" (click)="loggearseFacebook()">
+                                <i class="fab fa-facebook-square"></i>
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div>
