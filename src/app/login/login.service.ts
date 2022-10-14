@@ -55,6 +55,7 @@ export class LoginService {
     iniciarSesion(usuario: Usuario) : Observable<any>
     {
       const urlEndpoint = `${HOST_BACKEND}/login`;
+      console.log(JSON.stringify(usuario));
       return this.httpClient.post<any>(urlEndpoint, usuario);
     }
 

@@ -24,7 +24,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apock web design</title>
+    <title>SpaceTime</title>
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -38,7 +38,7 @@
                     <div class="titulo-seccion">
                         <h5>Registrar</h5>
                     </div>
-                    <form autocomplete="off" class="form-secion" action="#" method="post" accept-charset="utf-8">
+                    <form class="form-secion" accept-charset="utf-8">
                         <div class="mb-3">
                             <div class="form-input">
                                 <input class="form-control" type="text" placeholder="Nombre"
@@ -64,15 +64,11 @@
                             </div>
                         </div>
                         <div class="form-boton">
-                            <button type="submit" class="btn-form registro">
+                            <button class="btn-form registro">
                                 Registrar
                             </button>
                         </div>
                     </form>
-                    <!-- cambia el color de la carta con acierto, alerta y peligro -->
-                    <!-- <div class="carta-seccion acierto">
-                El usuario o contraseña es incorrecto
-            </div> -->
                 </div>
                 <div class="divisor">
                     <div class="contenedor-icono">
@@ -92,21 +88,21 @@
                             </button>
                         </div>
                     </div>
-                    <form class="form-secion" action="#" method="post" accept-charset="utf-8">
+                    <form class="form-secion" accept-charset="utf-8">
                         <div class="form-input">
-                            <input class="form-control" type="email" placeholder="Correo Electrónico">
+                            <input (ngModel)="usuarioLocal.email" class="form-control" type="email" placeholder="Correo Electrónico">
                             <div class="icono">
                                 <i class="fas fa-envelope"></i>
                             </div>
                         </div>
                         <div class="form-input">
-                            <input class="form-control" type="password" placeholder="Contraseña" minlength="8">
+                            <input (ngModel)="usuarioLocal.password" class="form-control" type="password" placeholder="Contraseña">
                             <div class="icono">
                                 <i class="fas fa-unlock"></i>
                             </div>
                         </div>
                         <div class="form-boton">
-                            <button type="submit" class="btn-form iniciar">
+                            <button class="btn-form iniciar" (click)="login()">
                                 Iniciar
                             </button>
                         </div>
