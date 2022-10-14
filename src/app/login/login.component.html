@@ -39,48 +39,52 @@
                         <h5>Registrar</h5>
                     </div>
 
-                    <div class="text-center" >
+                    <div class="text-center">
                         <p>¿No tienes una cuenta? Registrate ahora</p>
                     </div>
-                    <form autocomplete="off" class="form-secion" action="#" method="post" accept-charset="utf-8">
+                    <form autocomplete="off" class="form-secion" accept-charset="utf-8">
 
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" pattern="[A-Za-z0-9 ]{1,30}">
+                        <div class="form-floating mb-3">
+                            <input [(ngModel)]="usuarioRegistro.nombres" type="text" class="form-control" id="floatingInput" placeholder="Nombre"
+                                pattern="[A-Za-z0-9 ]{1,30}" name="names">
 
-                        <label for="floatingInput">
-                                <i  class="icono" class="fas fa-user"></i>
+                            <label for="floatingInput">
+                                <i class="icono" class="fas fa-user"></i>
                                 Nombre completo
-                        </label>
-                      </div>
+                            </label>
+                        </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">@</span>
                             <div class="form-floating">
-                              <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
-                              <label for="floatingInputGroup1">Nombre de Usuario</label>
+                                <input [(ngModel)]="usuarioRegistro.apodo" type="text" class="form-control" id="floatingInputGroup1" placeholder="Username" name="apodo">
+                                <label for="floatingInputGroup1">Nombre de Usuario</label>
                             </div>
-                          </div>
-
-                          <div class="form-floating mb-3">
-                            <input type="date" class="form-control" id="floatingInput" placeholder="Fecha de Nacimiento" minlength="8">
-                            <label for="floatingInput">
-                                Fecha de Nacimiento</label>
-                          </div>
+                        </div>
 
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="Correo Electrónico">
+                            <input [(ngModel)]="usuarioRegistro.fecha" type="date" class="form-control" id="floatingInput"
+                                placeholder="Fecha de Nacimiento" name="fecha">
+                            <label for="floatingInput">
+                                Fecha de Nacimiento</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input [(ngModel)]="usuarioRegistro.email" type="email" class="form-control" id="floatingInput"
+                                placeholder="Correo Electrónico" name="email">
                             <label for="floatingInput">
                                 <i class="icono" class="fas fa-envelope"></i>
                                 Correo Electrónico</label>
-                          </div>
+                        </div>
 
                         <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" minlength="8">
+                            <input [(ngModel)]="usuarioRegistro.password" type="password" class="form-control" id="floatingPassword" 
+                                placeholder="Contraseña" name="pasword">
                             <label for="floatingPassword">
                                 <i class="icono" class="fas fa-unlock"></i>
                                 Contraseña</label><br>
-                          </div>
+                        </div>
                         <div class="form-boton">
-                            <button class="btn-form registro">
+                            <button class="btn-form registro" (click)="registrarUsuario()">
                                 Registrar
                             </button>
                         </div>
@@ -95,39 +99,41 @@
                     <div class="titulo-seccion">
                         <h5>Iniciar sesión</h5>
                     </div>
-                    
-                    <form class="form-secion" action="#" method="post" accept-charset="utf-8">
-                    
+
+                    <form class="form-secion" accept-charset="utf-8">
+
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="Correo Electrónico">
+                            <input type="email" class="form-control" id="floatingInput"
+                                placeholder="Correo Electrónico">
                             <label for="floatingInput">
                                 <i class="icono" class="fas fa-envelope"></i>
                                 Correo Electrónico</label>
-                          </div>
-                          <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" minlength="8">
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
                             <label for="floatingPassword">
                                 <i class="icono" class="fas fa-unlock"></i>
                                 Contraseña</label><br>
-                          </div>
-                          
+                        </div>
+
                         <div class="form-boton">
-                            <button type="submit" class="btn-form iniciar">
+                            <button type="submit" class="btn-form iniciar" (click)="login()">
                                 Iniciar
                             </button>
-                        </div><br>
-                        <div class="text-center" >
+                        </div> 
+                        <br>
+                        <div class="text-center">
                             <p>o inicia sesión con</p>
                         </div>
-                        
-                    <div class="inciar-con">
-                        <div class="form-boton">
-                            <button type="submit" class="btn-form facebook" (click)="loggearseFacebook()">
-                                <i class="fab fa-facebook-square"></i>
-                                Facebook
-                            </button>
+
+                        <div class="inciar-con">
+                            <div class="form-boton">
+                                <button type="submit" class="btn-form facebook" (click)="loggearseFacebook()">
+                                    <i class="fab fa-facebook-square"></i>
+                                    Facebook
+                                </button>
+                            </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>

@@ -11,13 +11,10 @@ export class LoginService {
 
     constructor(private httpClient: HttpClient) {}
 
-    private _usuario: Usuario | undefined;
-    private _token: string | undefined;
+    private _usuario: Usuario;
 
     //Obtiene el usuario del session storage
-    public get usuario(): Usuario | undefined {
-      if (this._usuario == null || this._token == null)
-        return undefined;
+    public get usuario(): Usuario {
 
       if(this._usuario != null){
         return this._usuario;
@@ -61,7 +58,6 @@ export class LoginService {
 
     cerrarSesion() : void
     {
-      this._token = undefined;
       this._usuario = undefined;
       sessionStorage.clear();
     }

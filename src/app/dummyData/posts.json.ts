@@ -16,6 +16,7 @@ export const POSTS: Post[] = [
             email: 'marcosv200007@gmail.com',
             nombres: 'Marcos Emilio Velasquez Hidalgo',
             apodo: 'mael358',
+            fecha: '2022-10-05',
             password: 'a24&rkj@45./asf'
         }, 
         meGusto: true
@@ -34,6 +35,7 @@ export const POSTS: Post[] = [
             email: 'hveliz@gmail.com',
             nombres: 'Harry Enrique',
             apodo: 'hveliz',
+            fecha: '2022-10-13',
             password: 'a24&rkj@45./asf'
         }, 
         meGusto: false 

@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { AuthGuard } from './login/guards/auth.guard';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -47,7 +48,8 @@ const routes: Routes = [
     MatNativeDateModule,
     MatButtonModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    FormsModule
   ],
   providers: [
     {

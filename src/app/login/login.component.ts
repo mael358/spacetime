@@ -16,11 +16,14 @@ export class LoginComponent implements OnInit {
   public usuarioSocial: SocialUser | undefined;
   public usuarioLocal: Usuario;
 
+  public usuarioRegistro: Usuario;
+
   constructor(private socialAuthService: SocialAuthService, private loginService: LoginService, private router: Router) { }
   titulo: string = "SpaceTime";
 
   ngOnInit(): void {
     this.usuarioLocal = new Usuario();
+    this.usuarioRegistro = new Usuario();
     if (this.loginService.yaInicioSesion())
       this.router.navigate(['/home']);
 
@@ -28,12 +31,12 @@ export class LoginComponent implements OnInit {
     this.usuarioLocal = this.usuarioLocal as Usuario;
     this.socialAuthService.authState.subscribe((user) => {
       this.usuarioSocial = user;
-      let usuario = new Usuario();
       this.usuarioLocal.nombres = this.usuarioSocial.name;
       this.usuarioLocal.email = this.usuarioSocial.email;
       this.usuarioLocal.foto = this.usuarioSocial.response.picture.data.url;
-      console.log(usuario);
+      console.log(this.usuarioLocal);
       this.loginService.guardarUsuario(this.usuarioLocal);
+      this.router.navigate(['/home']);
     });
   }
 
@@ -66,8 +69,13 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signOut();
   }
 
-  cerrarSesion(){
-
+  registrarUsuario(){
+    console.log(this.usuarioRegistro);
+    this.loginService.registrarUsuario(this.usuarioRegistro).subscribe(x => {
+      Swal.fire('Usuario creado', 'Usuario creado exitosamente!', 'success');
+    }, e => {
+      if (e.status == 0)
+        Swal.fire('Error', 'No se ha podido obtener respuesta del servidor, intentalo mas tarde', 'error');
+    });
   }
-
 }
