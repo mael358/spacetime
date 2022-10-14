@@ -6,6 +6,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Apock web design</title>
+            <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+                integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        </head>
+
+
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                 <li class="nav-item">
@@ -15,9 +25,12 @@
                     <a class="nav-link" routerLink="/home">Inicio</a>
                 </li>
             </ul>
-            <form role="search">
-                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-            </form>
+            <div class="buscar">
+                <input type="text" placeholder="Buscar" required>
+                <div class="bt">
+        <i class="fas fa-search icon"></i>
+                </div>
+            </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
                     data-bs-display="static" aria-expanded="false">
