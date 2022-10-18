@@ -12,7 +12,8 @@
             <title>Apock web design</title>
             <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
             <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-                integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+                integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+                crossorigin="anonymous" />
         </head>
 
 
@@ -28,7 +29,7 @@
             <div class="buscar">
                 <input type="text" placeholder="Buscar" required>
                 <div class="bt">
-        <i class="fas fa-search icon"></i>
+                    <i class="fas fa-search icon"></i>
                 </div>
             </div>
             <div class="btn-group">
@@ -52,29 +53,62 @@
 
 <div class="container-fluid center my-3 pb-5">
 
+
+    <div class="centrar">
+
+        <div class="contenedor-sesion">
+            <div class="seccion">
+                <div class="titulo-seccion">
+                    <h5>Nuevo Post <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                        </svg>
+                    </h5>
+                </div>
+                <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-pen"></i>
+                    ¿Qué estás pensando, amigo?
+                </button>
+                <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-images"></i>
+                    Foto
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="container my-3 mx-auto" *ngFor="let publicacion of posts">
 
-        <mat-card class="example-card">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image" style="cursor: pointer;"></div>
-                <mat-card-title style="cursor: pointer;">{{ publicacion.usuario?.nombres }} {{
-                    publicacion.usuario?.apodo }}</mat-card-title>
-                <mat-card-subtitle>{{ publicacion.fecha | date:"fullDate" }}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                alt="Photo of a Shiba Inu">
-            <mat-card-content>
-                <p>
-                    {{ publicacion.contenido }}
-                </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button *ngIf="publicacion.meGusto" style="font-family: Segoe UI Emoji;">&#10084; {{
-                    publicacion.meGusta?.length }} Me gusta</button>
-                <button mat-button *ngIf="!publicacion.meGusto">&#10084; {{ publicacion.meGusta?.length }} Me
-                    gusta</button>
-            </mat-card-actions>
-        </mat-card>
+
+
+
+        <div class="centrar">
+
+
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image" style="cursor: pointer;"></div>
+                    <mat-card-title style="cursor: pointer;">{{ publicacion.usuario?.nombres }} {{
+                        publicacion.usuario?.apodo }}</mat-card-title>
+                    <mat-card-subtitle>{{ publicacion.fecha | date:"fullDate" }}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>
+                        {{ publicacion.contenido }}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button *ngIf="publicacion.meGusto" style="font-family: Segoe UI Emoji;">&#10084; {{
+                        publicacion.meGusta?.length }} Me gusta</button>
+                    <button mat-button *ngIf="!publicacion.meGusto">&#10084; {{ publicacion.meGusta?.length }} Me
+                        gusta</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </div>
     <div class="col-md-12 text-center">
         <span>
