@@ -103,14 +103,15 @@
                     <form class="form-secion" accept-charset="utf-8">
 
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput"
-                                placeholder="Correo Electrónico">
+                            <input [(ngModel)]="usuarioLocal.email" type="email" class="form-control" id="floatingInput"
+                                placeholder="Correo Electrónico" name="existingEmail">
                             <label for="floatingInput">
                                 <i class="icono" class="fas fa-envelope"></i>
                                 Correo Electrónico</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                            <input [(ngModel)]="usuarioLocal.password" type="password" class="form-control" id="floatingPassword" 
+                                placeholder="Contraseña" name="existingPassword">
                             <label for="floatingPassword">
                                 <i class="icono" class="fas fa-unlock"></i>
                                 Contraseña</label><br>

@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 
     this.loginService.iniciarSesion(this.usuarioLocal).subscribe(x => {
 
-      this.loginService.guardarUsuario(x.usuario);
+      this.loginService.guardarUsuario(x);
       this.router.navigate(['/home']);
     }, e => {
       console.log("error");

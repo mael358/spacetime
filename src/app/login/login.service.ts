@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HOST_BACKEND } from '../config/config';
+import { LOGIN_SUCCESSFULL_JSON } from '../dummyData/loginSuccessfull.json';
 import { Usuario } from './usuario';
 
 @Injectable({
@@ -20,7 +21,7 @@ export class LoginService {
         return this._usuario;
       } else if(this._usuario == null && sessionStorage.getItem('usuario') != null){
         var user = sessionStorage.getItem('usuario');
-        if (user != null)
+        if (user != null && user != undefined && user != 'undefined')
         {
           this._usuario = JSON.parse(user);
           return this._usuario;
@@ -53,9 +54,11 @@ export class LoginService {
     {
       const urlEndpoint = `${HOST_BACKEND}/login`;
       console.log(JSON.stringify(usuario));
-      return this.httpClient.post<any>(urlEndpoint, usuario);
+      //return this.httpClient.post<any>(urlEndpoint, usuario);
+      return of(LOGIN_SUCCESSFULL_JSON);
     }
 
+    
     cerrarSesion() : void
     {
       this._usuario = undefined;
