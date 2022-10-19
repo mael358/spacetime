@@ -12,7 +12,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(#59758d, transparent);
+    background: linear-gradient(#d8d4d4, transparent);
     margin-bottom: 1.25rem;
 }
 
@@ -21,7 +21,7 @@
     position: relative;
     width: 90%;
     height: 17rem;
-    background-image: linear-gradient(45deg, #93cf05, #317FFF);
+    background-image: linear-gradient(45deg, #a5b64f, #555b55);
     border-radius: 0 0 20px 20px;
 }
 
