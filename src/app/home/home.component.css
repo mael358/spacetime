@@ -1,19 +1,23 @@
-.example-card {
+.example-card 
+{
     max-width: 400px;
 }
 
-.example-header-image {
+.example-header-image 
+{
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
 }
 
 
-  .buscar{
+.buscar
+{
     position: relative;
     padding: 0px;
 }
 
-.buscar input{
+.buscar input
+{
     width: 0px;
     height: 40px;
     padding: 0 20px;
@@ -26,7 +30,8 @@
 }
 
 
-.bt{
+.bt
+{
     position: absolute;
     top: 0;
     right: 0;
@@ -41,22 +46,26 @@
     cursor: pointer;
 }
 
-.buscar:hover input{
+.buscar:hover input
+{
     width: 240px;
 }
 
-.buscar input:focus{
+.buscar input:focus
+{
     width: 240px;
 }
 
-.centrar {
+.centrar 
+{
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
   }
 
 
-.contenedor-sesion {
+.contenedor-sesion 
+{
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(205, 205, 219);
@@ -66,15 +75,19 @@
     box-shadow: 0 0 15px 2px rgba(0, 0, 0, .1);
     padding: 20px;
 }
-.contenedor-sesion .seccion {
+
+.contenedor-sesion .seccion 
+{
     width: 100%;
 }
 
-.contenedor-sesion .seccion:last-child{
+.contenedor-sesion .seccion:last-child
+{
     padding-left: 15px;
 }
 
-.contenedor-sesion .titulo-seccion h5 {
+.contenedor-sesion .titulo-seccion h5 
+{
     font-size: 1.5em;
     font-weight: normal;
     margin-bottom: 2rem;

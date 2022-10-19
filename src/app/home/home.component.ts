@@ -3,6 +3,7 @@ import { Post } from './post';
 import { HomeService } from './home.service';
 import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
+import { ModalService } from './post/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private homeService: HomeService, private loginService: LoginService, private router: Router) { }
+  constructor(private homeService: HomeService, private loginService: LoginService, private router: Router, private modalService: ModalService) { }
   titulo: string = "SpaceTime";
   posts: Post[] = [];
 
@@ -25,4 +26,10 @@ export class HomeComponent implements OnInit {
     this.loginService.cerrarSesion();
     this.router.navigate(['/login']);
   }
+
+  abrirModal(){
+    console.log("abriendo modal");
+    this.modalService.abrirModal();
+  }
+
 }
