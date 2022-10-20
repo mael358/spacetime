@@ -4,6 +4,7 @@ import { Post } from './post';
 import { HttpClient } from '@angular/common/http';
 import { POSTS } from '../dummyData/posts.json';
 import { HOST_BACKEND } from '../config/config';
+import { POST_SUCCESS } from '../dummyData/postSuccessfull.json';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,9 @@ export class HomeService {
     return of(POSTS);
   }
 
-  crearPost(post: Post) : Observable<any>{
+  crearPost(post: Post) : Observable<any>
+  {
+    return of(POST_SUCCESS);
     return this.httpClient.post<Post>(`${HOST_BACKEND}/post`, post);
   }
 

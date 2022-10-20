@@ -1,3 +1,4 @@
+<app-post></app-post>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
     <div class="container-fluid">
         <a class="navbar-brand" href="/landing">{{ titulo }}</a>
@@ -9,11 +10,11 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Apock web design</title>
+<!--             
             <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
             <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
                 integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-                crossorigin="anonymous" />
+                crossorigin="anonymous" /> -->
         </head>
 
 
@@ -66,6 +67,10 @@
                             d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                     </svg>
                 </div>
+                <button (click)="abrirModal()" type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-pen"></i>
+                    ¿Qué estás pensando, amigo?
+                </button>
             </div>
         </div>
     </div>

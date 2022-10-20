@@ -18,6 +18,8 @@ import { FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig } fro
 import { AuthGuard } from './login/guards/auth.guard';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { FormsModule } from '@angular/forms';
+import { PostComponent } from './home/post/post.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -38,7 +40,8 @@ const routes: Routes = [
     PerfilComponent,
     LandingComponent,
     CreadoresComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ const routes: Routes = [
     MatButtonModule,
     HttpClientModule,
     SocialLoginModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule
   ],
   providers: [
     {
