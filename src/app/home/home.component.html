@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/perfil">Mi perfil</a>
+                    <a class="nav-link" routerLink="/perfil/{{ usuario.id }}">Mi perfil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home">Inicio</a>
@@ -41,7 +41,7 @@
                     </svg>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-lg-end">
-                    <li><a class="dropdown-item" href="/perfil">Mi perfil</a></li>
+                    <li><a class="dropdown-item" href="/perfil/{{ usuario.id }}">Mi perfil</a></li>
                     <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a>
                     </li>
                 </ul>
@@ -58,14 +58,6 @@
         <div class="contenedor-sesion">
             <div class="seccion">
                 <div class="titulo-seccion">
-                    <button type="button" class="btn btn-primary">
-                        <i class="fa fa-pen"></i>
-                        Crear un nuevo post
-                    </button><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-arrow-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                    </svg>
                 </div>
                 <button (click)="abrirModal()" type="button" class="btn btn-outline-primary">
                     <i class="fa fa-pen"></i>
@@ -79,13 +71,13 @@
         <div class="centrar">
             <mat-card class="example-card">
                 <mat-card-header>
-                    <div mat-card-avatar class="example-header-image" style="cursor: pointer;"></div>
-                    <mat-card-title style="cursor: pointer;">{{ publicacion.usuario?.nombres }} {{
+                    <img mat-card-avatar class="example-header-image" src="{{ publicacion.usuario.foto }}" [routerLink]="['/perfil/', publicacion.usuario.id]" style="cursor: pointer;"/>
+                    <mat-card-title style="cursor: pointer;" [routerLink]="['/perfil/', publicacion.usuario.id]"> {{
                         publicacion.usuario?.apodo }}</mat-card-title>
                     <mat-card-subtitle>{{ publicacion.fecha | date:"fullDate" }}</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                    alt="Photo of a Shiba Inu">
+                <img mat-card-image src="{{ publicacion.img }}"
+                    alt="Contenido">
                 <mat-card-content>
                     <p>
                         {{ publicacion.contenido }}

@@ -24,7 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
+  { path: 'perfil/:id', component: PerfilComponent, canActivate: [AuthGuard]},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'landing', component: LandingComponent },
   { path: 'creadores', component: CreadoresComponent },

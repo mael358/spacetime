@@ -57,13 +57,13 @@
       <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
           <div class="perfil-usuario-avatar">
-            <img src="./assets/mula.jpg" alt="img-avatar">
+            <img src="data:image/jpeg;base64,{{ usuario.foto }}" alt="img-avatar">
             <button type="button" class="boton-avatar" data-bs-target="#myModalphoto" data-bs-toggle="modal">
               <i class="far fa-image"></i>
 
             </button>
           </div>
-          <div style="text-align: right">
+          <div *ngIf="puedeEditar" style="text-align: right">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i
                 class="fa fa-pen"></i> Editar perfil</button>
           </div>
@@ -71,15 +71,13 @@
       </div>
       <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
-          <h3 class="titulo">Harry Veliz</h3>
-          <p class="texto">Estudiante de la UMG</p>
+          <h3 class="titulo">{{ usuario.nombres }}</h3>
         </div>
         <div class="perfil-usuario-footer">
           <ul class="lista-datos">
-            <li><i class="icono fas fa-user"></i>Nombre de Usuario</li>
-            <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento</li>
-            <li><i class="icono fas fa-envelope"></i>Correo Electrónico</li>
-
+            <li><i class="icono fas fa-user"></i>{{ usuario.nombres }}</li>
+            <li><i class="icono fas fa-calendar-alt"></i>{{ usuario.fecha }}</li>
+            <li><i class="icono fas fa-envelope"></i>{{ usuario.email }}</li>
           </ul>
         </div>
       </div>
@@ -118,25 +116,13 @@
               <input type="text" class="form-control">
             </div>
             <div class="mb-3">
-              <label class="form-label">Nombre de Usuario</label>
-              <input type="email" class="form-control">
-            </div>
-            <div class="mb-3">
               <label class="form-label">Fecha de Nacimiento</label>
               <input type="date" class="form-control" id="floatingInput">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Presentación</label>
-              <textarea class="form-control"></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Correo Electrónico</label>
-              <input type="email" class="form-control">
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#secondModal"
+          <button (click)="actualizarUsuario()" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#secondModal"
             data-bs-dismiss="modal">Guardar</button>
           <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
         </div>

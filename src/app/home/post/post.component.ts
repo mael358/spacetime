@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { read } from 'fs';
+import { Observable, Subscriber } from 'rxjs';
 import { LoginService } from 'src/app/login/login.service';
 import Swal from 'sweetalert2';
 import { HomeService } from '../home.service';
@@ -23,6 +23,11 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     
     this.nuevoPost.usuario = this.loginService.usuario;
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    this.nuevoPost.fecha = `${yyyy}-${mm}-${dd}`;
     if (this.nuevoPost.usuario == undefined || this.nuevoPost.usuario == null)
       this.router.navigate(['/login']);
   }
@@ -34,7 +39,7 @@ export class PostComponent implements OnInit {
       this.fotoSeleccionada = null;
       return;
     }
-    this.nuevoPost.img = this.getBase64(this.fotoSeleccionada);
+    this.getBase64(this.fotoSeleccionada);
   }
 
   subirPost() {
@@ -49,7 +54,7 @@ export class PostComponent implements OnInit {
       this.homeService.crearPost(this.nuevoPost).subscribe(response => 
       {
         Swal.fire('Perfecto!', 'Has realizado el post correctamente', 'success')
-        //TODO: hacer un handle adecuado para la respuesta del back
+        this.nuevoPost.contenido = '';
         this.cerrarModal()
       },
       e => 
@@ -65,16 +70,43 @@ export class PostComponent implements OnInit {
     this.modalService.cerrarModal();
   }
 
-  getBase64(file: File) : string | ArrayBuffer {
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      return reader.result;
-    };
-    reader.onerror = function (error) {
-      return '';
-    };
-    return reader.result;
- }
+//   getBase64(file: File, callback) : string | ArrayBuffer{
+//     var reader = new FileReader();
+//     reader.readAsDataURL(file);
+//     reader.onload = function () {
+//       return reader.result;
+//     };
+//     reader.onerror = function (error) {
+//       return '';
+//     };
+//     return reader.result;
+//  }
+
+ getBase64(file: File){
+  const observable = new Observable((subscriber: Subscriber<any>) => {
+    this.readFile(file, subscriber);
+  })
+  
+  observable.subscribe((d) => {
+    this.nuevoPost.img = d;
+  })
+}
+
+readFile(file: File, subscriber: Subscriber<any>){
+  const filereader = new FileReader();
+
+  filereader.readAsDataURL(file);
+
+  filereader.onload = () => {
+    subscriber.next(filereader.result);
+    subscriber.complete();
+  }
+
+  filereader.onerror = () => {
+    subscriber.error();
+    subscriber.complete();
+  }
+}
+
 
 }
