@@ -32,7 +32,7 @@ export class LoginService {
 
     yaInicioSesion(): boolean {
       let usuario = this.usuario;
-      if (usuario != undefined && usuario.nombres && usuario.nombres.length > 0){
+      if (usuario != undefined && usuario.nombre && usuario.nombre.length > 0){
         return true;
       }
       return false;
@@ -46,7 +46,7 @@ export class LoginService {
     
     registrarUsuario(usuario: Usuario) : Observable<any>
     {
-      const urlEndpoint = `${HOST_BACKEND}/registrar`;
+      const urlEndpoint = `${HOST_BACKEND}/usuario`;
       return this.httpClient.post<any>(urlEndpoint, usuario);
     }
 

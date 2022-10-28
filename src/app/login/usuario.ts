@@ -1,9 +1,9 @@
 export class Usuario {
-    id: number;
-    foto: string;
-    email: string;
-    nombres: string;
+    idusr: number;
+    img: string;
+    correo: string;
+    nombre: string;
     apodo: string;
-    fecha: string;
-    password: string;
+    fechanac: string;
+    pswd: string;
 }

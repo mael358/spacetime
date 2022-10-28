@@ -57,7 +57,7 @@
       <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
           <div class="perfil-usuario-avatar">
-            <img src="data:image/jpeg;base64,{{ usuario.foto }}" alt="img-avatar">
+            <img src="data:image/jpeg;base64,{{ usuario.pswd }}" alt="img-avatar">
             <button type="button" class="boton-avatar" data-bs-target="#myModalphoto" data-bs-toggle="modal">
               <i class="far fa-image"></i>
 
@@ -71,13 +71,13 @@
       </div>
       <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
-          <h3 class="titulo">{{ usuario.nombres }}</h3>
+          <h3 class="titulo">{{ usuario.nombre }}</h3>
         </div>
         <div class="perfil-usuario-footer">
           <ul class="lista-datos">
-            <li><i class="icono fas fa-user"></i>{{ usuario.nombres }}</li>
-            <li><i class="icono fas fa-calendar-alt"></i>{{ usuario.fecha }}</li>
-            <li><i class="icono fas fa-envelope"></i>{{ usuario.email }}</li>
+            <li><i class="icono fas fa-user"></i>{{ usuario.nombre }}</li>
+            <li><i class="icono fas fa-calendar-alt"></i>{{ usuario.fechanac }}</li>
+            <li><i class="icono fas fa-envelope"></i>{{ usuario.correo }}</li>
           </ul>
         </div>
       </div>

@@ -45,7 +45,7 @@
                     <form autocomplete="off" class="form-secion" accept-charset="utf-8">
 
                         <div class="form-floating mb-3">
-                            <input [(ngModel)]="usuarioRegistro.nombres" type="text" class="form-control" id="floatingInput" placeholder="Nombre"
+                            <input [(ngModel)]="usuarioRegistro.nombre" type="text" class="form-control" id="floatingInput" placeholder="Nombre"
                                 pattern="[A-Za-z0-9 ]{1,30}" name="names">
 
                             <label for="floatingInput">
@@ -62,14 +62,14 @@
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input [(ngModel)]="usuarioRegistro.fecha" type="date" class="form-control" id="floatingInput"
+                            <input [(ngModel)]="usuarioRegistro.fechanac" type="date" class="form-control" id="floatingInput"
                                 placeholder="Fecha de Nacimiento" name="fecha">
                             <label for="floatingInput">
                                 Fecha de Nacimiento</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input [(ngModel)]="usuarioRegistro.email" type="email" class="form-control" id="floatingInput"
+                            <input [(ngModel)]="usuarioRegistro.correo" type="email" class="form-control" id="floatingInput"
                                 placeholder="Correo Electrónico" name="email">
                             <label for="floatingInput">
                                 <i class="icono" class="fas fa-envelope"></i>
@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="form-floating">
-                            <input [(ngModel)]="usuarioRegistro.password" type="password" class="form-control" id="floatingPassword" 
+                            <input [(ngModel)]="usuarioRegistro.pswd" type="password" class="form-control" id="floatingPassword" 
                                 placeholder="Contraseña" name="pasword">
                             <label for="floatingPassword">
                                 <i class="icono" class="fas fa-unlock"></i>
@@ -103,14 +103,14 @@
                     <form class="form-secion" accept-charset="utf-8">
 
                         <div class="form-floating mb-3">
-                            <input [(ngModel)]="usuarioLocal.email" type="email" class="form-control" id="floatingInput"
+                            <input [(ngModel)]="usuarioLocal.correo" type="email" class="form-control" id="floatingInput"
                                 placeholder="Correo Electrónico" name="existingEmail">
                             <label for="floatingInput">
                                 <i class="icono" class="fas fa-envelope"></i>
                                 Correo Electrónico</label>
                         </div>
                         <div class="form-floating">
-                            <input [(ngModel)]="usuarioLocal.password" type="password" class="form-control" id="floatingPassword" 
+                            <input [(ngModel)]="usuarioLocal.pswd" type="password" class="form-control" id="floatingPassword" 
                                 placeholder="Contraseña" name="existingPassword">
                             <label for="floatingPassword">
                                 <i class="icono" class="fas fa-unlock"></i>

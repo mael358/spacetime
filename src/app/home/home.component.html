@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/perfil/{{ usuario.id }}">Mi perfil</a>
+                    <a class="nav-link" routerLink="/perfil/{{ usuario.idusr }}">Mi perfil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home">Inicio</a>
@@ -41,7 +41,7 @@
                     </svg>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-lg-end">
-                    <li><a class="dropdown-item" href="/perfil/{{ usuario.id }}">Mi perfil</a></li>
+                    <li><a class="dropdown-item" href="/perfil/{{ usuario.idusr }}">Mi perfil</a></li>
                     <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a>
                     </li>
                 </ul>
@@ -71,8 +71,8 @@
         <div class="centrar">
             <mat-card class="example-card">
                 <mat-card-header>
-                    <img mat-card-avatar class="example-header-image" src="{{ publicacion.usuario.foto }}" [routerLink]="['/perfil/', publicacion.usuario.id]" style="cursor: pointer;"/>
-                    <mat-card-title style="cursor: pointer;" [routerLink]="['/perfil/', publicacion.usuario.id]"> {{
+                    <img mat-card-avatar class="example-header-image" src="{{ publicacion.usuario.img }}" [routerLink]="['/perfil/', publicacion.usuario.idusr]" style="cursor: pointer;"/>
+                    <mat-card-title style="cursor: pointer;" [routerLink]="['/perfil/', publicacion.usuario.idusr]"> {{
                         publicacion.usuario?.apodo }}</mat-card-title>
                     <mat-card-subtitle>{{ publicacion.fecha | date:"fullDate" }}</mat-card-subtitle>
                 </mat-card-header>

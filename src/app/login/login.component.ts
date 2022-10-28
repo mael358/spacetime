@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
     this.usuarioLocal = this.usuarioLocal as Usuario;
     this.socialAuthService.authState.subscribe((user) => {
       this.usuarioSocial = user;
-      this.usuarioLocal.nombres = this.usuarioSocial.name;
-      this.usuarioLocal.email = this.usuarioSocial.email;
-      this.usuarioLocal.foto = this.usuarioSocial.response.picture.data.url;
+      this.usuarioLocal.nombre = this.usuarioSocial.name;
+      this.usuarioLocal.correo = this.usuarioSocial.email;
+      this.usuarioLocal.img = this.usuarioSocial.response.picture.data.url;
       console.log(this.usuarioLocal);
       this.loginService.guardarUsuario(this.usuarioLocal);
       this.router.navigate(['/home']);
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     console.log(this.usuarioLocal);
-    if (this.usuarioLocal.email == null || this.usuarioLocal.password == null){
+    if (this.usuarioLocal.correo == null || this.usuarioLocal.pswd == null){
       Swal.fire('Error', 'Usuario o contraseña vacias!', 'error');
       return;
     }
@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit {
   registrarUsuario(){
     console.log(this.usuarioRegistro);
     this.loginService.registrarUsuario(this.usuarioRegistro).subscribe(x => {
+      console.log(x);
       Swal.fire('Usuario creado', 'Usuario creado exitosamente!', 'success');
     }, e => {
       if (e.status == 0)

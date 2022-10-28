@@ -28,7 +28,7 @@ export class PerfilComponent implements OnInit {
       {
         this.perfilService.ObtenerDatosUsuario(idUsuario).subscribe((user) => {
           this.usuario = user
-          if (usuarioLoggeado.id == this.usuario.id)
+          if (usuarioLoggeado.idusr == this.usuario.idusr)
             this.puedeEditar = true;
         })
       }
