@@ -47,15 +47,15 @@ export class LoginService {
     registrarUsuario(usuario: Usuario) : Observable<any>
     {
       const urlEndpoint = `${HOST_BACKEND}/usuario`;
+      usuario.img = '';
       return this.httpClient.post<any>(urlEndpoint, usuario);
     }
 
     iniciarSesion(usuario: Usuario) : Observable<any>
     {
-      const urlEndpoint = `${HOST_BACKEND}/login`;
       console.log(JSON.stringify(usuario));
-      //return this.httpClient.post<any>(urlEndpoint, usuario);
-      return of(LOGIN_SUCCESSFULL_JSON);
+      const urlEndpoint = `${HOST_BACKEND}/usuario/mail/${usuario.correo}`;
+      return this.httpClient.get<any>(urlEndpoint);
     }
 
     

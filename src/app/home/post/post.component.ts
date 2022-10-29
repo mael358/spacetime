@@ -51,10 +51,18 @@ export class PostComponent implements OnInit {
     else 
     {
       console.log(this.nuevoPost);
-      this.homeService.crearPost(this.nuevoPost).subscribe(response => 
+      let postSubir = 
+      {
+        idusr: this.nuevoPost.usuario.idusr,
+        fecha: this.nuevoPost.fecha,
+        contenido: this.nuevoPost.contenido,
+        img: this.nuevoPost.img
+      };
+      this.homeService.crearPost(postSubir).subscribe(response => 
       {
         Swal.fire('Perfecto!', 'Has realizado el post correctamente', 'success')
         this.nuevoPost.contenido = '';
+        window.location.reload();
         this.cerrarModal()
       },
       e => 

@@ -14,13 +14,13 @@ export class PerfilService {
 
     ObtenerDatosUsuario(id: number): Observable<any>
     {
-      return of(LOGIN_SUCCESSFULL_JSON);
-      return this.httpClient.get('/usuario');
+      return this.httpClient.get(`${HOST_BACKEND}/usuario/id/${id}`);
     }
 
     EditarDatosUsuario(usuario: Usuario): Observable<any>
     {
-      return of(LOGIN_SUCCESSFULL_JSON);
+      console.log(JSON.stringify(usuario));
+      
       return this.httpClient.put(`${HOST_BACKEND}/usuario`, usuario);
     }
 }

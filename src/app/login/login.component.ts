@@ -51,8 +51,15 @@ export class LoginComponent implements OnInit {
     }
 
     this.loginService.iniciarSesion(this.usuarioLocal).subscribe(x => {
+      console.log(x);
+      let usuario = x[0] as Usuario;
+      if (usuario.pswd != this.usuarioLocal.pswd)
+      {
+        Swal.fire('Error', 'Usuario o contraseña incorrecta!', 'error');
+        return;
+      }
 
-      this.loginService.guardarUsuario(x);
+      this.loginService.guardarUsuario(usuario);
       this.router.navigate(['/home']);
     }, e => {
       console.log("error");
@@ -72,6 +79,11 @@ export class LoginComponent implements OnInit {
     console.log(this.usuarioRegistro);
     this.loginService.registrarUsuario(this.usuarioRegistro).subscribe(x => {
       console.log(x);
+      this.usuarioRegistro.nombre = '';
+      this.usuarioRegistro.apodo = '';
+      this.usuarioRegistro.fechanac = '';
+      this.usuarioRegistro.correo = '';
+      this.usuarioRegistro.pswd = '';
       Swal.fire('Usuario creado', 'Usuario creado exitosamente!', 'success');
     }, e => {
       if (e.status == 0)

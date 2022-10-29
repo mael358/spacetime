@@ -13,19 +13,23 @@ export class HomeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPosts() : Observable<Post[]>
+  getPosts() : Observable<any>
   {
-    let result = this.httpClient.get<Post[]>(`${HOST_BACKEND}/posts`);
-    return of(POSTS);
+    return this.httpClient.get<Post[]>(`${HOST_BACKEND}/post`);
+    //return of(POSTS);
   }
 
-  crearPost(post: Post) : Observable<any>
+  crearPost(post: any) : Observable<any>
   {
-    return of(POST_SUCCESS);
+    //return of(POST_SUCCESS);
+    console.log(JSON.stringify(post));
+    
     return this.httpClient.post<Post>(`${HOST_BACKEND}/post`, post);
   }
 
-  darLikePost(post: Post, id_usuario: number): Observable<any> {
-    return this.httpClient.post<Post>(`${HOST_BACKEND}/post/${id_usuario}`, post);
+  darLikePost(post: any): Observable<any> {
+    console.log(post);
+    
+    return this.httpClient.post<any>(`${HOST_BACKEND}/react`, post);
   }
 }

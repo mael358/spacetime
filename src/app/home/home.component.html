@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/perfil/{{ usuario.idusr }}">Mi perfil</a>
+                    <a class="nav-link" [routerLink]="['/perfil/', usuario.idusr]">Mi perfil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home">Inicio</a>
@@ -41,7 +41,7 @@
                     </svg>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-lg-end">
-                    <li><a class="dropdown-item" href="/perfil/{{ usuario.idusr }}">Mi perfil</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/perfil/', usuario.idusr]">Mi perfil</a></li>
                     <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a>
                     </li>
                 </ul>
@@ -84,9 +84,9 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-button *ngIf="publicacion.meGusto" style="font-family: Segoe UI Emoji;">&#10084; {{
+                    <button (click)="darLikePost(publicacion.usuario.idusr, publicacion.id)" mat-button *ngIf="publicacion.meGusto" style="font-family: Segoe UI Emoji;">&#10084; {{
                         publicacion.meGusta?.length }} Me gusta</button>
-                    <button mat-button *ngIf="!publicacion.meGusto">&#10084; {{ publicacion.meGusta?.length }} Me
+                    <button (click)="darLikePost(publicacion.usuario.idusr, publicacion.id)" mat-button *ngIf="!publicacion.meGusto">&#10084; {{ publicacion.meGusta?.length }} Me
                         gusta</button>
                 </mat-card-actions>
             </mat-card>

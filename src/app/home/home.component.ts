@@ -17,15 +17,44 @@ export class HomeComponent implements OnInit {
   titulo: string = "SpaceTime";
   posts: Post[] = [];
   usuario: Usuario;
+  nuevoPost: Post = new Post();
 
   ngOnInit(): void 
   {
-    this.homeService.getPosts().subscribe(x => this.posts = x);
-    this.usuario = this.loginService.usuario;
+    this.homeService.getPosts().subscribe(x => {
+      console.log(x);
+      
+      this.posts = x.posts as Post[];
+    });
+    
+    this.usuario = this.loginService.usuario as Usuario;
+    console.log(this.usuario);
+    
   }
+
+  darLikePost(idusr1: number, idpst1: number)
+  {
+    console.log("like jeje");
+    
+    let post = {
+      idusr: idusr1,
+      idpst: idpst1
+    }
+    this.homeService.darLikePost(post).subscribe(response => 
+      {
+        window.location.reload();
+      },
+      e => 
+      {
+        console.log("Se ha producido un error.");
+      })
+  }
+
+
 
   cerrarSesion()
   {
+    console.log("cerrando sesion");
     
     this.loginService.cerrarSesion();
     this.router.navigate(['/login']);
